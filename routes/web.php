@@ -36,7 +36,7 @@ Route::get('/urbain_scolaire', [AbonnementController::class, 'urbain_scolaire'])
 Route::get('/urbain_ordinaire', [AbonnementController::class, 'urbain_ordinaire'])->name('urbain_ordinaire');
 Route::get('/regional_ordinaire', [AbonnementController::class, 'regional_ordinaire'])->name('regional_ordinaire');
 Route::get('/regional_scolaire', [AbonnementController::class, 'regional_scolaire'])->name('regional_scolaire');
-//Route::get('/lisEtab', [EtablissementController::class, 'etablissement'])->name('etablissment');
+Route::get('/urbain_scolaire', [EtablissementController::class, 'etab'])->name('etab');
 
 ////
 

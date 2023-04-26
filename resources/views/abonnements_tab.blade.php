@@ -450,7 +450,7 @@
         </div>
     </div>
 </div>
-<script>
+{{-- <script>
     function getEtablissements() {
         type_etablissement_id = $("#type_etablissement_id").val();
         $.ajax({
@@ -487,9 +487,8 @@
     $("#type_etablissement_id").change(function() {
         getEtablissements();
     });
-</script>
-
-{{-- <script>
+</script> --}}
+<script>
     //1-------------------------------
     $("#type_etablissement").change(function() {
         type_etablissement_id = $("#type_etablissement_id").val();
@@ -556,4 +555,4 @@
         })
 
     })
-</script> --}}
+</script>

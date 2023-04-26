@@ -29,7 +29,7 @@ class EtablissementController extends Controller
         } else {
             $etablissements = Etablissement::all();
             $type_etablissement = TypeEtablissement::all();
-            return view('abonnements_tab', compact('etablissements,type_etablissement'));
+            return view('abonnements_tab', compact('etablissements', 'type_etablissement'));
         }
     }
 }

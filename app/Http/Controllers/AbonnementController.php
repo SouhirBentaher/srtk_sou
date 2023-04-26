@@ -11,12 +11,12 @@ class AbonnementController extends Controller
 
     public function urbain_scolaire()
     {
-         $type_etablissement = TypeEtablissement::all();
+        // $type_etablissement = TypeEtablissement::all();
         // $etablissements =  Etablissement::all();
         $data = [
             'title' => 'Abonnements urbain scolaire',
             // 'etablissements' => $etablissements,
-             'type_etablissement' => $type_etablissement
+            // 'type_etablissement' => $type_etablissement
         ];
 
         return view('urbain_scolaire', $data);
