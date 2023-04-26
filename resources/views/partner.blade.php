@@ -12,7 +12,8 @@
 
 
                 <div class="owl-stage-outer">
-                    <div class="owl-stage" style="transform: translate3d(-116rem, 0rem, 0rem); transition: all 1s ease 0s; width: 248.625rem;">
+                    <div class="owl-stage"
+                        style="transform: translate3d(-116rem, 0rem, 0rem); transition: all 1s ease 0s; width: 248.625rem;">
 
                         <div class="owl-item cloned" style="width: 14.7rem; margin-right: 1.875rem;">
                             <div class="partner-item">
@@ -66,7 +67,9 @@
 
                     </div>
                 </div>
-                <div class="owl-nav disabled"><button type="button" role="presentation" class="owl-prev"><i class="bx bx-chevron-left"></i></button><button type="button" role="presentation" class="owl-next"><i class="bx bx-chevron-right"></i></button></div>
+                <div class="owl-nav disabled"><button type="button" role="presentation" class="owl-prev"><i
+                            class="bx bx-chevron-left"></i></button><button type="button" role="presentation"
+                        class="owl-next"><i class="bx bx-chevron-right"></i></button></div>
                 <div class="owl-dots disabled"></div>
             </div>
         </div>

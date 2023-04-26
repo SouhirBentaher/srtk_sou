@@ -17,16 +17,13 @@
          <div class="container">
 
              <nav class="navbar navbar-expand-md navbar-light">
-                 <a class="navbar-brand" href="index.php">
+                 <a class="navbar-brand" href="index">
                      <img src="assets/img/logo.png" alt="logo" width="150px" class="ms-4">
                  </a>
                  <div class="collapse navbar-collapse mean-menu">
                      <ul class="navbar-nav m-auto">
                          <li class="nav-item">
-                             <a href="index.php" class="nav-link active">
-                                 Acceuil
-                             </a>
-
+                             <a class="nav-link active" href="{{ url('index') }}">Acceuil</a>
                          </li>
                          <li class="nav-item">
                              <a href="#" class="nav-link">
@@ -63,11 +60,10 @@
                                      </a>
                                      <ul class="dropdown-menu">
                                          <li class="nav-item">
-                                             <a href="urbain_scolaire.php" class="nav-link">Scolaire
-                                             </a>
+                                             <a class="nav-link" href="{{ url('urbain_scolaire') }}">Scolaire</a>
                                          </li>
                                          <li class="nav-item">
-                                             <a href="urbain_ordinaire.php" class="nav-link">Ordinaire
+                                             <a class="nav-link" href="{{ url('urbain_ordinaire') }}">Ordinaire</a>
                                              </a>
                                          </li>
                                      </ul>
@@ -78,12 +74,10 @@
                                      </a>
                                      <ul class="dropdown-menu">
                                          <li class="nav-item">
-                                             <a href="regional_scolaire.php" class="nav-link">Scolaire
-                                             </a>
+                                             <a class="nav-link" href="{{ url('regional_scolaire') }}">Scolaire</a>
                                          </li>
                                          <li class="nav-item">
-                                             <a href="regional_ordinaire.php" class="nav-link">Ordinaire
-                                             </a>
+                                             <a class="nav-link" href="{{ url('regional_ordinaire') }}">Ordinaire</a>
                                          </li>
                                      </ul>
                                  </li>
@@ -197,7 +191,8 @@
                          <div class="get-quote">
                              <div class="sidebar-widget search">
                                  <form class="search-form">
-                                     <input class="form-control" name="search" placeholder="Chercher..." type="text">
+                                     <input class="form-control" name="search" placeholder="Chercher..."
+                                         type="text">
                                      <button class="search-button" type="submit">
                                          <i class="bx bx-search"></i>
                                      </button>

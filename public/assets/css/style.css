@@ -515,7 +515,7 @@ Section Title Area Style*/
 Header Area Style
 ======================================================*/
 .header-area {
-  position: absolute;
+ /* position: absolute;*/
   top: 0;
   left: 0;
   right: 0;

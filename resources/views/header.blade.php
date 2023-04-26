@@ -101,7 +101,7 @@
         </div>
 
 
-        @extends('client.navbar')
+        @extends('navbar')
 
         @section('content-header')
 

@@ -24,6 +24,12 @@
             <i class="fas fa-fw fa-tachometer-alt"></i>
             <span>Tableau de board</span></a>
     </li>
+    <hr class="sidebar-divider">
+    <li class="nav-item active">
+        <a href="{{ route('users.index') }}" class="nav-link {{ $current_route == 'users.index' ? 'active' : '' }}">
+            <i class="fas fa-fw fa-tachometer-alt"></i>
+            <span>Users</span></a>
+    </li>
 
     <!-- Divider eli 3ala jnabb  -->
     <hr class="sidebar-divider">

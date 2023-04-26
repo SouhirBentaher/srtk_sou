@@ -64,7 +64,6 @@
                                 </div>
 
                             </div>
-
                             <div class="col-12 mt-30">
                                 <h3>Ecole type</h3>
                             </div>
@@ -72,45 +71,48 @@
                                 <div class="col-lg-3 col-sm-6 col-md-3">
                                     <label class="single-check">
                                         Publique
-                                        <input type="radio" checked="checked" name="radio1">
+                                        <input type="radio" checked="checked" class=" required" id="natureEtab"
+                                            name="natureEtab">
                                         <span class="checkmark"></span>
                                     </label>
                                 </div>
                                 <div class="col-lg-3 col-sm-6 col-md-3">
                                     <label class="single-check">
                                         Privé
-                                        <input type="radio" name="radio1">
+                                        <input type="radio" name="natureEtab" class=" required" id="natureEtab">
                                         <span class="checkmark"></span>
                                     </label>
                                 </div>
                             </div>
                             <div class="row mt-30">
                                 <div class="col-lg-6 col-sm-12 col-md-6">
-                                    <h3>Le système éducatif</h3>
+                                    <label for="type_etablissement_id" class="label">
+                                        <h3>Le système éducatif</h3>
+                                    </label>
                                     <div class="form-group">
-                                        <select>
-                                            <option value="1">Ecole primaire</option>
-                                            <option value="2">Collége</option>
-                                            <option value="0">lycée</option>
-                                            <option value="3">Associations</option>
-
+                                        <select name="type_etablissement_id" id="type_etablissement_id"
+                                            class="form-control">
+                                            <option value="">-- Sélectionner un TYPE_ETAB --</option>
+                                            @foreach ($type_etablissement as $type_etablissement)
+                                                <option value="{{ $type_etablissement->id }}">
+                                                    {{ $type_etablissement->labelle }}
+                                                </option>
+                                            @endforeach
                                         </select>
                                     </div>
+
                                 </div>
 
                                 <div class="col-lg-6 col-sm-12 col-md-6">
-                                    <h3>Établissement d'enseignement ou universitaire</h3>
                                     <div class="form-group">
-                                        <select>
-                                            <option value="1">Etab 1</option>
-                                            <option value="2">Etab 2</option>
-                                            <option value="0">Etab 3</option>
-                                            <option value="3">Etab 4</option>
-
+                                        <label for="etablissement_id" class="label">
+                                            <h3>Établissement d'enseignement ou universitaire</h3>
+                                        </label>
+                                        <select name="etablissement_id" id="etablissement_id" class="form-control">
+                                            <option value="">-- Sélectionner un Etab --</option>
                                         </select>
                                     </div>
                                 </div>
-
 
                             </div>
 
@@ -448,3 +450,110 @@
         </div>
     </div>
 </div>
+<script>
+    function getEtablissements() {
+        type_etablissement_id = $("#type_etablissement_id").val();
+        $.ajax({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            },
+            type: "get",
+            url: ENDPOINT + "/urbain_scolaire",
+            data: {
+                type_etablissement_id: type_etablissement_id
+            },
+            dataType: 'json',
+            cache: false,
+            success: function(result) {
+                etablissements = result.etablissements;
+                options = "<option value=''>-- Sélectionner un Etab --</option>";
+                $.each(etablissements, function(etab, value) {
+                    options += "<option value=" + value.id + ">" + value.nom_etablissements +
+                        "</option>";
+                });
+                $("#etablissement_id").html(options);
+            },
+            error: function(xhr, ajaxOptions, thrownError) {
+                console.log(xhr.responseText);
+                console.log(thrownError);
+            }
+        });
+    }
+
+    $(document).ready(function() {
+        getEtablissements();
+    });
+
+    $("#type_etablissement_id").change(function() {
+        getEtablissements();
+    });
+</script>
+
+{{-- <script>
+    //1-------------------------------
+    $("#type_etablissement").change(function() {
+        type_etablissement_id = $("#type_etablissement_id").val();
+        $.ajax({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            },
+            processing: true,
+            serverSide: true,
+            type: "get",
+            url: ENDPOINT + "/urbain_scolaire",
+            data: {
+                type_etablissement_id: type_etablissement_id
+            },
+            dataType: 'json',
+            cache: false,
+            success: function(result) {
+                etablissements = result.etablissements;
+                options = "<option>Choisir Pays</option>";
+                $.each(etablissements, function(etab, value) {
+                    options += "<option value=" + value.id + ">" + value
+                        .nom_etablissements +
+                        "</option>";
+                });
+                $("#etablissements_id").html(options);
+            },
+            error: function(xhr, ajaxOptions, thrownError) {
+                console.log(xhr.responseText);
+                console.log(thrownError);
+            }
+        })
+
+    })
+    //3-------------------------------
+    $(document).ready(function() {
+        type_etablissement_id = $("#type_etablissement_id").val();
+        $.ajax({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            },
+            processing: true,
+            serverSide: true,
+            type: "get",
+            url: ENDPOINT + "/urbain_scolaire",
+            data: {
+                type_etablissement_id: type_etablissement_id
+            },
+            dataType: 'json',
+            cache: false,
+            success: function(result) {
+                etablissements = result.etablissements;
+                options = "<option>Choisir Pays</option>";
+                $.each(etablissements, function(etab, value) {
+                    options += "<option value=" + value.id + ">" + value
+                        .nom_etablissements +
+                        "</option>";
+                });
+                $("#etablissements_id").html(options);
+            },
+            error: function(xhr, ajaxOptions, thrownError) {
+                console.log(xhr.responseText);
+                console.log(thrownError);
+            }
+        })
+
+    })
+</script> --}}

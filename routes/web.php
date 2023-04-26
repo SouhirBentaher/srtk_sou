@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\AbonnementController;
+use App\Http\Controllers\AcceuilController;
 use App\Http\Controllers\Admin\AuthController;
 use App\Http\Controllers\Admin\ProfileController;
 use App\Http\Controllers\Admin\UserController;
@@ -28,6 +30,17 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+//RouteClient
+Route::get('/index', [AcceuilController::class, 'index'])->name('index');
+Route::get('/urbain_scolaire', [AbonnementController::class, 'urbain_scolaire'])->name('urbain_scolaire');
+Route::get('/urbain_ordinaire', [AbonnementController::class, 'urbain_ordinaire'])->name('urbain_ordinaire');
+Route::get('/regional_ordinaire', [AbonnementController::class, 'regional_ordinaire'])->name('regional_ordinaire');
+Route::get('/regional_scolaire', [AbonnementController::class, 'regional_scolaire'])->name('regional_scolaire');
+//Route::get('/lisEtab', [EtablissementController::class, 'etablissement'])->name('etablissment');
+
+////
+
+
 //RouteAdmin
 
 Route::get('/admin/login', [AuthController::class, 'getLogin'])->name('getLogin');
@@ -50,6 +63,9 @@ Route::group(['middleware' => ['auth']], function () {
     Route::post('admin/ligne', [LigneController::class, 'store']);
     //////-----route--etblissement-------/////
     Route::get('/admin/etablissement', [EtablissementController::class, 'index'])->name('etablissements.index');
+    //Route::get('/regional_scolaire', [EtablissementController::class, 'etablissement'])->name('etablissment');
+    //Route::get('/regional_ordinaire', [EtablissementController::class, 'etablissement'])->name('etablissment');
+    //Route::get('/urbain_ordinaire', [EtablissementController::class, 'etablissement'])->name('etablissment');
     //////-----route--station-------/////
     Route::get('/admin/station', [StationController::class, 'index'])->name('stations.index');
     Route::get('/station/create', [StationController::class, 'create']);
