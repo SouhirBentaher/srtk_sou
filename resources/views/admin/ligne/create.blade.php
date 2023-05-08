@@ -61,8 +61,18 @@
         <div class="card-body">
             <form action="{{ url('admin/ligne') }}" method="post">
                 {!! csrf_field() !!}
-                <label>Ligne</label></br>
+                <h1><label>Nom Ligne</label></h1>
                 <input type="text" name="nom" id="nom" class="form-control" required></br>
+
+                <h1> <label>Categorie</label></h1>
+                <div class="form-group">
+                    <select name="categorie_id" id="categorie_id" class="form-control">
+                        <option value="">-- Sélectionner Categorie --</option>
+                        @foreach ($categories as $categorie)
+                            <option value="{{ $categorie->id }}">{{ $categorie->type }}</option>
+                        @endforeach
+                    </select>
+                </div></br>
                 <input type="submit" value="Enregistrer" class="btn btn-success"></br>
             </form>
 

@@ -62,12 +62,9 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-header">
-                        <h2>Tarifs Urbain</h2>
+                        <h2>Tarifs</h2>
                     </div>
                     <div class="card-body">
-                        <a href="{{ url('tarif/create') }}" class="btn btn-success btn-sm" title="Add New Student">
-                            Ajouter Tarifs
-                        </a>
                         {{-- Message -------------------------------------- --}}
                         @if (Session::has('success'))
                             <div class="alert alert-success alert-dismissible" role="alert">
@@ -94,25 +91,21 @@
                                 <thead>
                                     <tr>
                                         <th>#</th>
-                                        <th>id</th>
-                                        <th>prix</th>
-                                        <th>prix_fixe</th>
+                                        <th>categorie_id</th>
+                                        <th>prix_semestruelle</th>
+                                        <th>prix_annuelle</th>
                                         <th></th>
                                         <th></th>
-                                        <th></th>
-                                        <th></th>
+
                                     </tr>
                                 </thead>
                                 <tbody>
                                     @foreach ($tarifs as $item)
                                         <tr>
                                             <td>{{ $loop->iteration }}</td>
-                                            <td>{{ $item->id }}</td>
-                                            <td>{{ $item->prix }}</td>
-                                            <td>{{ $item->prix_fixe }}</td>
-                                            <td>{{ $item->a }}</td>
-                                            <td>{{ $item->b }}</td>
-                                            <td>{{ $item->c }}</td>
+                                            <td>{{ $item->categorie_id }}</td>
+                                            <td>{{ $item->prix_semestruelle }}</td>
+                                            <td>{{ $item->prix_annuelle }}</td>
                                             <td>
 
                                                 <a href="{{ url('/student/' . $item->id . '/edit') }}"

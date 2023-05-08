@@ -14,11 +14,8 @@ return new class extends Migration
         Schema::create('etablissements', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('type_etablissements_id');
-            $table->unsignedBigInteger('nature_etablissements_id');
             $table->string('nom');
-            $table->string('code_etab');
-            $table->string('type_etablissement');
-            $table->string('lib_etablissement');
+            $table->boolean('is_prive');
             $table->timestamps();
         });
     }

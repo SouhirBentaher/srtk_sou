@@ -9,7 +9,7 @@ class Categorie extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'type',
+        'type', 'klm'
     ];
     public function Ligne()
     {

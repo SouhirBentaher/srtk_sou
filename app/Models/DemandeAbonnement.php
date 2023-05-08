@@ -9,21 +9,25 @@ class DemandeAbonnement extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'date_reception',
-        'date_cmd',
-        'code_query',
+        'section', 'idEtudiant', 'nom', 'prenom',
+        'adresse', 'date_naissance',
+        'cin', 'date_emission', 'email',
+        'numero_tl', 'nom_parent',
+        'prenom_parent', 'code_query', 'status',
         'status'
+        //'date_reception',
+        // 'date_cmd',
     ];
-    public function Tarif()
-    {
-        return $this->hasOne(Tarif::class);
-    }
-    public function Gare()
-    {
-        return $this->hasOne(Gare::class);
-    }
-    public function Paiement()
-    {
-        return $this->hasOne(Paiement::class);
-    }
+    // public function Tarif()
+    // {
+    //     return $this->hasOne(Tarif::class);
+    // }
+    // public function Gare()
+    // {
+    //     return $this->hasOne(Gare::class);
+    // }
+    // public function Paiement()
+    // {
+    //     return $this->hasOne(Paiement::class);
+    // }
 }

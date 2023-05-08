@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Categorie;
 use App\Models\Ligne;
 use Illuminate\Http\Request;
 
@@ -18,22 +19,29 @@ class LigneController extends Controller
     }
     //-----create-----------------------------------////
     public function create()
+
     {
-        return view('admin.ligne.create');
+        $categories = Categorie::all();
+        $data = [
+
+            'categories' => $categories,
+        ];
+        return view('admin.ligne.create', $data)->with('categories', $categories);
     }
     //-----create-----------------------------------////
     public function store(Request $request)
     {
-        $input = $request->all();
-        Ligne::create($input);
+        $input = [
+            'nom' => $request->input('nom'),
+            'categorie_id' => $request->input('categorie_id'),
+
+        ];
+        $ligne = new Ligne($input);
+        $ligne->categorie_id = $request->input('categorie_id');
+        $ligne->save();
         return redirect('admin/ligne')->with('success', 'Ligne ajouté !');
     }
-    //-----show------------------------------------------------------////
-    public function show($id)
-    {
-        $ligne = Ligne::find($id);
-        return view('admin.ligne.show')->with('lignes', $ligne);
-    }
+
     //-----edit------------------------------------------------------////
     public function edit($id)
     {
@@ -52,6 +60,6 @@ class LigneController extends Controller
     public function destroy($id)
     {
         Ligne::destroy($id);
-        return redirect('ligne')->with('flash_message', 'Ligne deleted!');
+        return redirect('admin/ligne')->with('success', ' ligne deleted !');
     }
 }

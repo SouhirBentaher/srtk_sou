@@ -8,20 +8,18 @@ use Illuminate\Database\Eloquent\Model;
 class Etablissement extends Model
 {
     use HasFactory;
+    protected $table = 'etablissements';
     protected $fillable = [
-        'nom', 'code_etab', 'type_etablissement', 'lib_etablissement',
+        'nom',
+        'is_prive'
 
     ];
-    public function Abonné()
+    public function Abonne()
     {
-        return $this->belongsTo(Abonne::class);
+        return $this->hasMany(Abonne::class);
     }
-    public function TypeEtablissementr()
+    public function TypeEtablissement()
     {
         return $this->belongsTo(TypeEtablissement::class);
-    }
-    public function NatureEtablissement()
-    {
-        return $this->belongsTo(NatureEtablissement::class);
     }
 }

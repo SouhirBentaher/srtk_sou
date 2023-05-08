@@ -57,18 +57,12 @@
 @section('body')
 
     <div class="card" style="margin:20px;">
-        <div class="card-header">Create New LYCEE</div>
+        <div class="card-header">Create New TYPE ETABLISSEMENT</div>
         <div class="card-body">
             <form action="{{ url('admin/lycee') }}" method="post">
                 {!! csrf_field() !!}
-                <label>LYCEE</label></br>
-                <input type="text" name="lycee" id="lycee" class="form-control" required></br>
-                <label>ETAT</label></br>
-                <input type="text" name="etat" id="etat" class="form-control" required></br>
-                <label>TYPE</label></br>
-                <input type="text" name="type" id="type" class="form-control" required></br>
-                <label>ACTIVE</label></br>
-                <input type="text" name="active" id="active" class="form-control" required></br>
+                <label>Type Etablissement</label></br>
+                <input type="text" name="labelle" id="labelle" class="form-control" required></br>
                 <input type="submit" value="Enregistrer" class="btn btn-success"></br>
 
             </form>

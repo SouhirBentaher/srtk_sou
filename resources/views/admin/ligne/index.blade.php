@@ -62,7 +62,7 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-header">
-                        <h2> Liste Station InterUrbain </h2>
+                        <h2> Ligne </h2>
                     </div>
                     <div class="card-body">
                         <a href="{{ url('/ligne/create') }}" class="btn btn-success btn-sm" title="Add New Student">
@@ -93,8 +93,8 @@
                                 <thead>
                                     <tr>
                                         <th>#</th>
-                                        <th>TITRE</th>
-                                        <th></th>
+                                        <th>Nom Ligne</th>
+                                        <th>Categorie</th>
                                         <th></th>
                                         <th></th>
 
@@ -107,7 +107,7 @@
                                             <td>{{ $loop->iteration }}</td>
 
                                             <td>{{ $item->nom }}</td>
-                                            <td>{{ $item->a }}</td>
+                                            <td>{{ $item->categorie_id }}</td>
                                             <td>{{ $item->a }}</td>
                                             <td>{{ $item->a }}</td>
                                             <td>{{ $item->a }}</td>
@@ -118,13 +118,14 @@
                                                             class="fa fa-pencil-square-o"
                                                             aria-hidden="true"></i>Modifier</button></a>
 
-                                                <form method="POST" action="{{ url('/student' . '/' . $item->id) }}"
+                                                <form method="POST" action="{{ url('admin/ligne' . '/' . $item->id) }}"
                                                     accept-charset="UTF-8" style="display:inline">
                                                     {{ method_field('DELETE') }}
                                                     {{ csrf_field() }}
                                                     <button type="submit" class="btn btn-danger btn-sm"
-                                                        title="Delete Student" onclick="return confirm("Confirm
-                                                        delete?")"><i class="fa fa-trash-o" aria-hidden="true"></i>
+                                                        title="Delete Student"
+                                                        onclick="return confirm('Confirm delete !!! ')"><i
+                                                            class="fa fa-trash-o" aria-hidden="true"></i>
                                                         Effacer</button>
                                                 </form>
                                             </td>

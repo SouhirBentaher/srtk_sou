@@ -57,12 +57,14 @@
 @section('body')
 
     <div class="card" style="margin:20px;">
-        <div class="card-header">Lycee Stagiere</div>
+        <div class="card-header">Categorie</div>
         <div class="card-body">
             <form action="{{ url('admin/stagiere') }}" method="post">
                 {!! csrf_field() !!}
-                <label>LYCEE</label></br>
-                <input type="text" name="nom" id="nom" class="form-control" required></br>
+                <h1> <label>الأصناف</label></h1></br>
+                <input type="text" name="type" id="typen " class="form-control" required></br>
+                <h1><label>__ المسافة:من __إلى</label></h1></br>
+                <input type="text" name="klm" id="typen" class="form-control" required></br>
                 <input type="submit" value="Enregistrer" class="btn btn-success"></br>
 
             </form>

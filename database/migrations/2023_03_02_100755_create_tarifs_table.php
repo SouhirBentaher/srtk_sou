@@ -13,8 +13,9 @@ return new class extends Migration
     {
         Schema::create('tarifs', function (Blueprint $table) {
             $table->id();
-            $table->float('prix');
-            $table->float('prix_fixe');
+            $table->unsignedBigInteger('categorie_id');
+            $table->float('prix_annuelle');
+            $table->float('prix_semestruelle');
             $table->timestamps();
         });
     }

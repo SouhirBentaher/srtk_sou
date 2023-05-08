@@ -57,15 +57,19 @@
 @section('body')
 
     <div class="card" style="margin:20px;">
-        <div class="card-header">Create New Tarifs</div>
+        <div class="card-header">Create New Administrateur</div>
         <div class="card-body">
-            <form action="{{ url('admin/tarif') }}" method="post">
+            <form action="{{ url('admin/users') }}" method="post">
                 {!! csrf_field() !!}
-                <label>Prix</label></br>
-                <input type="text" name="prix" id="prix" class="form-control" required></br>
-                <label>Prix_Fixe</label></br>
-                <input type="text" name="prix_fixe" id="prix_fixe" class="form-control" required></br>
-                <input type="submit" value="Save" class="btn btn-success"></br>
+                <label>Name</label></br>
+                <input type="text" name="name" id="name" class="form-control" required></br>
+                <label>Email</label></br>
+                <input type="text" name="email" id="email" class="form-control" required></br>
+                <label>password</label></br>
+                <input type="text" name="password" id="password" class="form-control" required></br>
+                <label>is_admin</label></br>
+                <input type="text" name="is_admin" id="is_admin" class="form-control" required></br>
+                <input type="submit" value="Enregistrer" class="btn btn-success"></br>
             </form>
 
         </div>

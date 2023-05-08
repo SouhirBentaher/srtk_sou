@@ -57,12 +57,39 @@
 @section('body')
 
     <div class="card" style="margin:20px;">
-        <div class="card-header">Create New Faculte</div>
+        <div class="card-header">Create New Etablissement</div>
         <div class="card-body">
             <form action="{{ url('admin/faculte') }}" method="post">
                 {!! csrf_field() !!}
-                <label>FACULTE</label></br>
+                <h2><label>Nom Etablissement</label></h2>
                 <input type="text" name="nom" id="nom" class="form-control" required></br>
+
+                <h2> <label>Type Etablissement</label></h2>
+                <div class="form-group">
+                    <select name="type_etablissements_id" id="type_etablissements_id" class="form-control">
+                        <option value="">-- Sélectionner Type Etablissement --</option>
+                        @foreach ($type_etablissements as $type_etablissement)
+                            <option value="{{ $type_etablissement->id }}">{{ $type_etablissement->labelle }}</option>
+                        @endforeach
+                    </select>
+                </div></br>
+                <div class="row">
+
+                    <div class="col-lg-3 col-sm-6 col-md-3">
+                        <label class="single-check">
+                            <input type="checkbox" name="is_prive" value="Publique">
+                            Publique
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+                    <div class="col-lg-3 col-sm-6 col-md-3">
+                        <label class="single-check">
+                            <input type="checkbox" name="is_prive" value="Privé">
+                            Privé
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+                </div></br>
                 <input type="submit" value="Enregistrer" class="btn btn-success"></br>
             </form>
 

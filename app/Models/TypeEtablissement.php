@@ -8,11 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class TypeEtablissement extends Model
 {
     use HasFactory;
+    protected $table = 'type_etablissements';
     protected $fillable = [
-        ' labelle',
-
+        'labelle',
     ];
-    public function Etablissement()
+    public function etablissement()
     {
         return $this->hasMany(Etablissement::class);
     }

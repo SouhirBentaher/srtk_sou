@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('lignes', function (Blueprint $table) {
             $table->id();
-            // $table->unsignedBigInteger('categorie_id');
             $table->string('nom');
+            $table->unsignedBigInteger('categorie_id');
             $table->timestamps();
         });
     }

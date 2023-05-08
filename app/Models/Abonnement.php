@@ -8,30 +8,41 @@ use Illuminate\Database\Eloquent\Model;
 class Abonnement extends Model
 {
     use HasFactory;
+    protected $table = 'abonnements';
     protected $fillable = [
-        'circuit_id', 'ligne_id', 'type_abonnement_id',
-        'code_bare',
+        'reference',
+        'code_a_bare',
         'date_debut',
-        'date_fin'
+        'date_fin',
+        'tarif',
+        'is_vdf',
+        // 'is_free',
+        'date_reception',
+        'status',
     ];
-    public function Impression()
-    {
-        return $this->hasOne(Impression::class);
-    }
-    public function Circuit()
-    {
-        return $this->belongsTo(circuits::class);
-    }
-    public function TypeAbonnement()
-    {
-        return $this->belongsTo(TypeAbonnemennt::class);
-    }
-    public function Ligne()
-    {
-        return $this->belongsTo(Ligne::class);
-    }
+    /*----------------- One To MAny ------------------*/
     public function Abonne()
     {
         return $this->belongsTo(Abonne::class);
+    }
+    public function impression()
+    {
+        return $this->belongsTo(Impression::class);
+    }
+    public function circuit()
+    {
+        return $this->belongsTo(Circuit::class);
+    }
+    public function typeAbonnement()
+    {
+        return $this->belongsTo(TypeAbonnement::class);
+    }
+    public function dureeAbonnement()
+    {
+        return $this->belongsTo(DureeAbonnement::class);
+    }
+    public function ligne()
+    {
+        return $this->belongsTo(Ligne::class);
     }
 }

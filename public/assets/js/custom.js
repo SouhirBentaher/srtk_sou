@@ -7,7 +7,7 @@
 	});
 
 	// Nice Select JS
-	$('select').niceSelect();
+	//$('select').niceSelect();
 
 	// Header Sticky, Go To Top JS JS
 	$(window).on('scroll', function () {

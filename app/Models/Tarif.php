@@ -9,8 +9,8 @@ class Tarif extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'prix',
-        'prix_fixe',
+        'prix_annuelle',
+        'prix_semestruelle',
     ];
     public function DemandeAbonnement()
     {

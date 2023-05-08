@@ -8,7 +8,7 @@
 <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
     <!-- Sidebar - Brand -->
-    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+    <a class="sidebar-brand d-flex align-items-center justify-content-center">
         <div class="sidebar-brand-icon rotate-n-15">
             <i class="fas fa-laugh-wink"></i>
         </div>
@@ -36,48 +36,50 @@
     <li class="nav-item">
         <a href="{{ route('tarifs.index') }}" class="nav-link {{ $current_route == 'tarifs.index' ? 'active' : '' }}">
             <i class="fas fa-fw fa-table"></i>
-            <span>Tarifs Urbain</span>
+            <span>Tarifs </span>
         </a>
-        <a href="{{ route('users.index') }}" class="nav-link {{ $current_route == 'users.index' ? 'active' : '' }}">
-            <i class="fas fa-fw fa-table"></i>
-            <span>Tarifs InterUrbain</span>
-        </a>
+
         <a href="{{ route('lycees.index') }}" class="nav-link {{ $current_route == 'lycees.index' ? 'active' : '' }}">
             <i class="fas fa-fw fa-table"></i>
-            <span>Lycee</span>
+            <span>Type Etablissement</span>
         </a>
         <a href="{{ route('facultes.index') }}"
             class="nav-link {{ $current_route == 'facultes.index' ? 'active' : '' }}">
             <i class="fas fa-fw fa-table"></i>
-            <span>Facultes</span>
+            <span>Etablissement</span>
         </a>
         <a href="{{ route('stagieres.index') }}"
             class="nav-link {{ $current_route == 'stagieres.index' ? 'active' : '' }}">
             <i class="fas fa-fw fa-table"></i>
-            <span>Lycee Stagieres</span>
+            <span>Categorie</span>
         </a>
-        <a href="{{ route('etablissements.index') }}"
-            class="nav-link {{ $current_route == 'etablissements.index' ? 'active' : '' }}">
+        <a href="{{ route('lignes.index') }}" class="nav-link {{ $current_route == 'lignes.index' ? 'active' : '' }}">
             <i class="fas fa-fw fa-table"></i>
-            <span>Etablissement</span>
-        </a>
-        <a href="{{ route('users.index') }}" class="nav-link {{ $current_route == 'users.index' ? 'active' : '' }}">
-            <i class="fas fa-fw fa-table"></i>
-            <span>Code Station</span>
+            <span>Ligne</span>
         </a>
         <a href="{{ route('stations.index') }}"
             class="nav-link {{ $current_route == 'stations.index' ? 'active' : '' }}">
             <i class="fas fa-fw fa-table"></i>
-            <span>Station InterUrbain</span>
+            <span>-------- </span>
         </a>
+        <a href="{{ route('abonnements.index') }}"
+            class="nav-link {{ $current_route == 'abonnements.index' ? 'active' : '' }}">
+            <i class="fas fa-fw fa-table"></i>
+            <span>Abonnement</span>
+        </a>
+
         <a href="{{ route('lignes.index') }}" class="nav-link {{ $current_route == 'lignes.index' ? 'active' : '' }}">
             <i class="fas fa-fw fa-table"></i>
-            <span>Liste Station InterUrbain</span>
+            <span>-----------</span>
+        </a>
+        <a href="{{ route('tarifs.index') }}" class="nav-link {{ $current_route == 'tarifs.index' ? 'active' : '' }}">
+            <i class="fas fa-fw fa-table"></i>
+            <span>------------</span>
         </a>
     </li>
 
 
-    <!-- Heading -->
+    {{-- <!-- Heading -->
     <div class="sidebar-heading">
         URBAIN
     </div>
@@ -185,7 +187,7 @@
             <i class="fas fa-fw fa-table"></i>
             <span>Inter Urbain</span>
         </a>
-    </li>
+    </li> --}}
     <!-- Divider -->
     <hr class="sidebar-divider d-none d-md-block">
     <!-- Sidebar Toggler (Sidebar) -->

@@ -62,11 +62,11 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-header">
-                        <h2>LYCEE</h2>
+                        <h2>Type Etablissement</h2>
                     </div>
                     <div class="card-body">
                         <a href="{{ url('/lycee/create') }}" class="btn btn-success btn-sm" title="Add New Student">
-                            Ajouter Lycee
+                            Ajouter Type Etablissement
                         </a>
                         {{-- Message -------------------------------------- --}}
                         @if (Session::has('success'))
@@ -94,21 +94,16 @@
                                 <thead>
                                     <tr>
                                         <th>#</th>
-                                        <th>LYCEE</th>
-                                        <th>ETAT</th>
-                                        <th>TYPE</th>
-                                        <th>ACTIVE</th>
+                                        <th>Type Etablissement</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($lycees as $item)
+                                    @foreach ($type_etablissemets as $item)
                                         <tr>
                                             <td>{{ $loop->iteration }}</td>
-                                            <td>{{ $item->id }}</td>
-                                            <td>{{ $item->lycee }}</td>
-                                            <td>{{ $item->etat }}</td>
-                                            <td>{{ $item->type }}</td>
-                                            <td>{{ $item->active }}</td>
+
+                                            <td>{{ $item->labelle }}</td>
+
 
                                             <td>
 

@@ -25,7 +25,7 @@ class Abonne extends Model
     ];
     public function Etablissement()
     {
-        return $this->hasOne(Etablissement::class);
+        return $this->belongsTo(Etablissement::class);
     }
     public function TypeAbonne()
     {

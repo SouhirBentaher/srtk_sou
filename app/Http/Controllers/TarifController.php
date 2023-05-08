@@ -16,24 +16,6 @@ class TarifController extends Controller
         $tarifs =  Tarif::all();
         return view('admin.tarif.index', $data)->with('tarifs', $tarifs);
     }
-    //-----create-----------------------------------////
-    public function create()
-    {
-        return view('admin.tarif.create');
-    }
-    //-----create-----------------------------------////
-    public function store(Request $request)
-    {
-        $input = $request->all();
-        Tarif::create($input);
-        return redirect('admin/tarif')->with('success', 'Tarif ajouté !');
-    }
-    //-----show------------------------------------------------------////
-    public function show($id)
-    {
-        $tarif = Tarif::find($id);
-        return view('admin.tarif.show')->with('tarifs', $tarif);
-    }
     //-----edit------------------------------------------------------////
     public function edit($id)
     {

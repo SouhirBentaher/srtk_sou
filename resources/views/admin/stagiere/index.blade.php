@@ -62,11 +62,11 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-header">
-                        <h2>Lycée Stagiere</h2>
+                        <h2>Categorie</h2>
                     </div>
                     <div class="card-body">
                         <a href="{{ url('/stagiere/create') }}" class="btn btn-success btn-sm" title="Add New Student">
-                            Ajouter Lycee
+                            Ajouter Categorie
                         </a>
                         {{-- Message -------------------------------------- --}}
                         @if (Session::has('success'))
@@ -94,20 +94,18 @@
                                 <thead>
                                     <tr>
                                         <th>#</th>
-                                        <th>LYCEE STAGIERE</th>
-                                        <th></th>
+                                        <th>Categorie</th>
+                                        <th>Distance</th>
                                         <th></th>
                                         <th></th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($stagieres as $item)
+                                    @foreach ($categories as $item)
                                         <tr>
                                             <td>{{ $loop->iteration }}</td>
-                                            <td>{{ $item->nom }}</td>
-                                            <td>{{ $item->etat }}</td>
                                             <td>{{ $item->type }}</td>
-                                            <td>{{ $item->active }}</td>
+                                            <td>{{ $item->klm }}</td>
 
                                             <td>
 
@@ -116,13 +114,14 @@
                                                             class="fa fa-pencil-square-o" aria-hidden="true"></i>
                                                         Modifier</button></a>
 
-                                                <form method="POST" action="{{ url('/student' . '/' . $item->id) }}"
+                                                <form method="POST" action="{{ url('admin/stagiere' . '/' . $item->id) }}"
                                                     accept-charset="UTF-8" style="display:inline">
                                                     {{ method_field('DELETE') }}
                                                     {{ csrf_field() }}
                                                     <button type="submit" class="btn btn-danger btn-sm"
-                                                        title="Delete Student" onclick="return confirm("Confirm
-                                                        delete?")"><i class="fa fa-trash-o" aria-hidden="true"></i>
+                                                        title="Delete Student"
+                                                        onclick="return confirm('Confirm delete !!! ')"><i
+                                                            class="fa fa-trash-o" aria-hidden="true"></i>
                                                         Effacer</button>
                                                 </form>
                                             </td>
